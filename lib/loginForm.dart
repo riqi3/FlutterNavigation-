@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF100f1f),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Image.asset(
@@ -95,8 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-	builder: (context) => RowScreen(),
-));
+                    builder: (context) => RowScreen(),
+                  ));
                 },
                 child: Container(
                   padding: EdgeInsets.all(15),
@@ -121,23 +121,22 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Center(
-                      child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF100f1f),
-                      fontSize: 15,
-                    ),
-                  )),
+              child: Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
                 ),
-              
+                child: Center(
+                    child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF100f1f),
+                    fontSize: 15,
+                  ),
+                )),
+              ),
             ),
           ]),
         ),

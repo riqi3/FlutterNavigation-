@@ -3,14 +3,21 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:login_form/row-col.dart';
 import 'package:login_form/row.dart';
+import 'package:login_form/sideNav.dart';
 
 class ColScreen extends StatelessWidget {
   //const RowScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
+    return Scaffold(
+            backgroundColor: Colors.white,
+      drawer: SideNavBar(),
+      appBar: AppBar(
+        title: Text("Column"),
+      ),
+      body: SingleChildScrollView(
+              child: Container(
         margin: const EdgeInsets.fromLTRB(30, 30, 30, 30),
         color: Colors.white,
         child: Column(
@@ -105,6 +112,8 @@ class ColScreen extends StatelessWidget {
           ],
         ),
       ),
+      ),
+
     );
   }
 
